@@ -1,0 +1,414 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0; /* leaves no white border around the content */
+}
+
+header{
+}
+
+nav {
+    background-color: rgb(155, 28, 59);
+    text-align: center;
+    font-size: 0;
+    position: fixed;
+    top: 0;
+    margin:0;
+    z-index: 0;
+    overflow: hidden;
+
+}
+
+main{
+	display: inline-block;
+}
+nav a {
+    color: white;
+    padding: 1rem;
+    display: inline-block;
+    font-size: 1rem; /* cannot use em ecause it would be relative to the font size of the nav element which is 0 */
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+}
+
+.col-narrow { /* is automatically text-aligned left, so the pic is to the left of the column */
+    width: 20%;  /* no limit on decimal places -- this means 33.34% of 60em */
+    float: left;
+    height:100%;
+    margin:0;
+    padding:0;
+    position:relative;
+    z-index: 1;
+}
+.col-wide {
+    width: 100%;
+    min-Width:50rem;
+    float: left;
+    position:fixed;
+    z-index:0;
+}
+
+.tab{
+	display: none;
+  	padding: 10rem;
+  	padding-top: 2rem;
+  	padding-bottom: 1rem;
+  	justify-content: center;
+	min-width:40rem;
+	max-width:65rem;
+	height: 30rem;
+}
+
+/*.container {
+	border:2px solid #ccc;
+	width:300px;
+	height: 200px;
+	overflow-y: scroll;
+	display: inline-block;
+}*/
+
+.btn{
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  border-radius: 100%;
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.choice{
+	background-color: White; /* Blue background */
+	border: solid; /* Remove borders */
+	border-width: 2px;
+	border-color: black;
+	color: black; /* White text */
+	padding: 40px; /* Some padding */
+	border-radius: 25%;
+	cursor: pointer; /* Mouse pointer on hover */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 15px;
+	border-spacing: 50px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  justify-content: center;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.navBtn{
+  max-width:60rem;
+  display: flex;
+  justify-content: center;
+  position:Relative;
+
+}
+
+.tab-dot{
+	min-width:50rem;
+	max-width:65rem;
+
+ }
+.desk{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	height: 2rem;
+
+}
+.building{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin:5px;
+    padding:5px;
+    width: 100%;
+    overflow: auto;
+}
+
+.centre-page {
+	padding-left: 290px;
+	max-width: 80rem;
+	position: fixed;
+	justify-content: center;
+}
+
+.choose-student-list{
+	margin-top: 2rem;
+	padding-top: 1rem;
+	border:2px solid #ccc;
+	width:80%;
+	height: 15rem;
+	overflow: auto;
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+	align-self: auto;
+	flex-wrap: wrap;
+	flex-basis: 40%;
+}
+
+#info-msg
+{
+    width: 30rem;
+}
+
+.studentdiv-choice{
+	width: 40%;
+	padding-top: 5px;
+	padding-bottom:5px;
+}
+
+.horiz-btns{
+	display:flex;
+	flex-direction:row;
+	align-self:auto;
+	justify-content:center;
+}
+
+.student-message-choice{
+	padding: 1rem;
+	justify-content:left;
+}
+.message-choice-label{
+	padding-right: 1rem;
+	max-width: 5px;
+	overflow: auto;
+}
+
+
+.arrive{
+	border: solid;
+	border-color: black;/* Remove borders */
+	border-width: 1px;
+	background-color: white;
+	color: black; /* White text */
+	padding: 3px 5px; /* Some padding */
+	border-radius: 25%;
+	margin-right: 2px;
+	font-size: 105%;
+}
+
+.fee{
+	border: solid;
+	border-color: black;/* Remove borders */
+	border-width: 1px;
+	background-color: white;
+	color: black; /* White text */
+	padding: 3px 5px; /* Some padding */
+	border-radius: 25%;
+	margin-right: 2px;
+	font-size: 105%;
+}
+
+
+.remind{
+	border: solid;
+	border-color: black;/* Remove borders */
+	border-width: 1px;
+	background-color: white;
+	color: black; /* White text */
+	padding: 3px 5px; /* Some padding */
+	border-radius: 25%;
+	margin-right: 2px;
+	font-size: 105%;
+}
+
+
+.custom{
+	border: solid;
+	border-color: black;/* Remove borders */
+	border-width: 1px;
+	background-color: white;
+	color: black; /* White text */
+	padding: 3px 5px; /* Some padding */
+	border-radius: 25%;
+	margin-right: 2px;
+	font-size: 105%;
+}
+
+#message{
+	width: 75%;
+	height: 100px;
+}
+
+#label-placeholder{
+	justify-content:center;
+	padding-left: 20px;
+	color:grey;
+}
+
+#msg-type{
+	border-radius:25%;
+	justify-content: left;
+	width: 150px;
+	height: 100px;
+	margin: 5px;
+}
+
+
+#nextBtn{
+	margin-left: 90%;
+}
+
+
+#title{
+    font-size: 2rem;
+     /* couldn't figure out how to center this properly */
+}
+
+#user-name
+{
+    float: right;
+}
+
+#msg-table{
+	margin-top: 30px;
+	padding-top: 15px;
+	border:2px solid #ccc;
+	width:500px;
+	height: 200px;
+	overflow: auto;
+	justify-content: left;
+	display: flex;
+	flex-direction: row;
+	align-self: auto;
+	flex-wrap: wrap;
+}
+
+#wrapper{
+	width:100%;
+}
+
+#prevBtn{
+	left: 300px;
+}
+
+body h1
+{
+    padding-top: 5rem;
+    display: inline-block;
+    margin-right: 40rem;
+}
+
+body h2{
+	/*margin-left: 250px;*/
+	justify-content: center;
+	align-self:auto;
+
+}
+
+#dashboard-table
+{
+    height: 13rem;
+    overflow-y:scroll;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px solid dodgerblue;
+}
+
+.dashboard-btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#back-to-dashboard
+{
+    margin-left: 40rem;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 6rem;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+
+.dropdown:hover .dropdown-content {display: block;}
+
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+#select-res-heading
+{
+    padding-top: 4rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 1rem;
+}
+
+#dashboard-container
+{
+    padding-left: 16.5rem;
+
+}
+
+#dashboard-table
+{
+    margin-top: 3rem;
+}
+
+.studentdiv-choice #studentCheck
+{
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+.choice:focus
+{
+    background-color: dodgerblue;
+    color: white;
+}

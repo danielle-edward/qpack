@@ -1,0 +1,683 @@
+html {
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0; /* leaves no white border around the content */
+}
+
+header{
+}
+
+nav {
+    background-color: rgb(155, 28, 59);
+    text-align: center;
+    font-size: 0;
+    position: fixed;
+    top: 0;
+    margin:0;
+    z-index: 0;
+    overflow: hidden;
+
+}
+
+main{
+	display: inline-block;
+}
+
+nav a {
+    color: white;
+    padding: 1rem;
+    display: inline-block;
+    font-size: 1rem; /* cannot use em ecause it would be relative to the font size of the nav element which is 0 */
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+}
+
+.col-narrow { /* is automatically text-aligned left, so the pic is to the left of the column */
+    width: 20%;  /* no limit on decimal places -- this means 33.34% of 60em */
+    float: left;
+    height:100%;
+    margin:0;
+    padding:0;
+    position:relative;
+    z-index: 1;
+}
+
+.col-wide {
+    width: 100%;
+    z-index:0;
+}
+
+.tab{
+	display: none;
+  	padding: 10rem;
+  	padding-top: 2rem;
+  	padding-bottom: 1rem;
+  	justify-content: center;
+	max-width:65rem;
+	height: 30rem;
+}
+
+
+
+.btn{
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  border-radius: 100%;
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.choice{
+	background-color: White; /* Blue background */
+	border: solid; /* Remove borders */
+	border-width: 2px;
+	border-color: black;
+	color: black; /* White text */
+	padding: 40px; /* Some padding */
+	border-radius: 25%;
+	cursor: pointer; /* Mouse pointer on hover */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 15px;
+	border-spacing: 50px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  justify-content: center;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.navBtn{
+  /*width:60rem;*/
+  display: flex;
+  justify-content: center;
+  /*position:fixed;*/
+
+}
+
+.tab-dot{
+	min-width:50rem;
+	max-width:65rem;
+
+ }
+
+.desk{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	height: 2rem;
+
+}
+
+.building{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin:5px;
+    padding:5px;
+    width: 100%;
+    overflow: auto;
+}
+
+.centre-page {
+	justify-content: center;
+	margin-left:20rem;
+}
+
+.choose-student-list{
+	margin-top: 2rem;
+	padding-top: 1rem;
+	border:2px solid #ccc;
+	width:80%;
+	height: 15rem;
+	overflow: auto;
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+	align-self: auto;
+	flex-wrap: wrap;
+	flex-basis: 40%;
+}
+
+#logbook-path{
+  background-color: white;
+  font-size: 20px;
+  border: none; /* Remove borders */
+  color: black;
+  padding: 12px 16px; /* Some padding */
+  border-radius: 5%;
+  cursor: pointer; /* Mouse pointer on hover */
+}
+#logbook-path:hover{
+  background-color: #63edff;
+  opacity: 0.8;
+}
+
+#student-search {
+  width: 30%;
+  border: 1px solid black;
+  padding: 0px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  vertical-align: top;
+}
+
+#search{
+  width: 40px;
+  height: 36px;
+  border: 1px solid black;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  vertical-align: top;
+}
+
+.pop-up{
+  z-index: 2;
+  top: 20%;
+  height: 60%;
+  width: 40%;
+  background-color: #fafafa;
+  border-radius: 3%;
+  padding: 0.8%;
+  overflow-y: scroll;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+}
+
+#exit{
+  position: absolute;
+}
+
+input[type="file"]{
+  display: none;
+}
+
+.opt{
+  width: 40%;
+  height: 80%;
+  border: none;
+  border-radius: 1%;
+  background-color: DodgerBlue;
+  color: white;
+  padding: .2em .6em .3em;
+  padding-top: 20%;
+  font-size: 100%;
+  margin-left: 5%;
+  line-height: 1;
+  vertical-align: baseline;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.opt:hover{
+  background-color: #369cff;
+}
+
+#vid-show{
+  height: 75%;
+  border-radius: 2%;
+}
+
+#vid-take{
+  width: 100%;
+  height: 50px;
+  background-color: DodgerBlue;
+  color: white;
+  border: none;
+  border-radius: 5%;
+  margin-bottom: 2%;
+}
+
+#vid-take:hover{
+  background-color: #369cff;
+}
+
+#download{
+  padding-left: 40%;
+  padding-right: 40%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 10%;
+  background-color: #0077ea;
+  color: white;
+  border: none;
+  border-radius: 5%;
+}
+#download:hover{
+  background-color: DodgerBlue;
+}
+
+#disclaimer{
+  text-align: center;
+  color: #8a8a8a;
+}
+
+.pre-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.pre-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.pre-label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.pre-label input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.pre-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.pre-label .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#use{
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  width: 95%;
+  height: 10%;
+  font-size: 20px;
+  padding: 12px 16px; /* Some padding */
+  border-radius: 2%;
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+#exit{
+  border: none;
+  background-color: #fafafa;
+}
+
+#info-msg
+{
+    width: 30rem;
+}
+
+.studentdiv-choice{
+	width: 40%;
+	padding-top: 5px;
+	padding-bottom:5px;
+}
+
+.horiz-btns{
+	display:flex;
+	flex-direction:row;
+	align-self:auto;
+	justify-content:center;
+}
+
+.student-message-choice{
+	padding: 1rem;
+	justify-content:left;
+}
+.message-choice-label{
+	padding-right: 1rem;
+	max-width: 5px;
+	overflow: auto;
+}
+
+
+.arrive{
+	border: solid;
+	border-color: black;/* Remove borders */
+	border-width: 1px;
+	background-color: white;
+	color: black; /* White text */
+	padding: 3px 5px; /* Some padding */
+	border-radius: 25%;
+	margin-right: 2px;
+	font-size: 105%;
+}
+
+.fee{
+	border: solid;
+	border-color: black;/* Remove borders */
+	border-width: 1px;
+	background-color: white;
+	color: black; /* White text */
+	padding: 3px 5px; /* Some padding */
+	border-radius: 25%;
+	margin-right: 2px;
+	font-size: 105%;
+}
+
+
+.remind{
+	border: solid;
+	border-color: black;/* Remove borders */
+	border-width: 1px;
+	background-color: white;
+	color: black; /* White text */
+	padding: 3px 5px; /* Some padding */
+	border-radius: 25%;
+	margin-right: 2px;
+	font-size: 105%;
+}
+
+
+.custom{
+	border: solid;
+	border-color: black;/* Remove borders */
+	border-width: 1px;
+	background-color: white;
+	color: black; /* White text */
+	padding: 3px 5px; /* Some padding */
+	border-radius: 25%;
+	margin-right: 2px;
+	font-size: 105%;
+}
+
+.auto-message{
+	width:20rem;
+	height:20rem;
+}
+
+#message{
+	width: 75%;
+	height: 100px;
+}
+
+#label-placeholder{
+	justify-content:center;
+	padding-left: 20px;
+	color:grey;
+}
+
+#msg-type{
+	border-radius:25%;
+	justify-content: left;
+	width: 150px;
+	height: 100px;
+	margin: 5px;
+}
+
+
+#nextBtn{
+	margin-left: auto;
+}
+
+
+#title{
+    font-size: 2rem;
+     /* couldn't figure out how to center this properly */
+}
+
+#user-name
+{
+    float: right;
+}
+
+#msg-table{
+  /*z-index: 2;*/
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border:2px solid #ccc;
+	width: 45rem;
+	height: 15rem;
+	overflow-y: auto;
+	justify-content: left;
+}
+
+#wrapper{
+	width:100%;
+}
+
+/*#prevBtn{
+	left: 300px;
+}*/
+
+body h1
+{
+    padding-top: 5rem;
+    display: inline-block;
+    /*margin-left: 10rem;*/
+}
+
+body h2{
+	/*margin-left: 250px;*/
+	justify-content: center;
+	align-self:auto;
+
+}
+
+#dashboard-table
+{
+    height: 13rem;
+    overflow-y:scroll;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px solid dodgerblue;
+}
+
+.dashboard-btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#back-to-dashboard
+{
+    margin-left: 40rem;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 6rem;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+
+.dropdown:hover .dropdown-content {display: block;}
+
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+#select-res-heading
+{
+    padding-top: 4rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 1rem;
+}
+
+#dashboard-container
+{
+    padding-left: 16.5rem;
+
+}
+
+#dashboard-table
+{
+    margin-top: 3rem;
+}
+
+.quickRemind{
+  background-color: DodgerBlue;
+  color: white;
+  border-style: solid hidden solid solid;
+  border-width: thick;
+  border-color: white;
+}
+
+.quickRemind:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.studentCheck
+{
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+.choice:focus
+{
+    background-color: dodgerblue;
+    color: white;
+}
+
+.recipient-block {
+	max-height: 2rem;
+	max-width: 2rem;
+	overflow: auto;
+}
+.subject-block{
+	padding:1rem;
+	/*max-height: 3rem;
+	max-width: 2rem;*/
+}
+.message-block {
+	padding:1rem;
+	/*max-height: 3rem;
+	max-width: 2rem;*/
+}
+.confirm {
+	color: white;
+	background-color: Dodgerblue;
+	border: none;
+	padding: 1rem;
+	margin: 1rem;
+	margin-left: 0rem;
+	border-radius: 25%;
+}
+
+#custom-message, #arrive-message, #fee-message, #remind-message {
+	max-height: 50rem;
+	max-width: 50rem;
+	padding: 2rem;
+	margin: 2rem;
+	display: inline-block;
+	border: solid;
+	border-color: Dodgerblue;
+	border-width: 1px;
+}
+#custom-input{
+	width: 35rem;
+	min-height: 2rem;
+}
+#custom-rec, #arrive-rec, #fee-rec, #remind-rec {
+	height: 5rem;
+	overflow: auto;
+	justify-content: center;
+	display: flex;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	flex-direction: row;
+	align-self: auto;
+	flex-wrap: wrap;
+	border: solid;
+	border-color: Dodgerblue;
+	border-width: 1px;
+}
+
+#confirm-send{
+	max-height: 70rem;
+	overflow: auto;
+}
